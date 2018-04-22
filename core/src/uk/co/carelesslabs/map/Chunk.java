@@ -11,7 +11,7 @@ public class Chunk {
     public ArrayList<ArrayList<Tile>> tiles = new ArrayList<ArrayList<Tile>>();
     
     public Chunk(int number_rows, int number_cols, int tile_size ){
-        tiles = new ArrayList<ArrayList<Tile>>();
+        tiles = new ArrayList<>();
         this.number_rows = number_rows;
         this.number_cols = number_cols;
         this.tile_size = tile_size;

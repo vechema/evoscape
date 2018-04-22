@@ -2,7 +2,7 @@ package uk.co.carelesslabs.map;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import uk.co.carelesslabs.Enums.TILETYPE;
+import uk.co.carelesslabs.Enums.TileType;
 import uk.co.carelesslabs.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,7 +17,7 @@ public class Island {
     Texture water_01, water_02, water_03, water_04;
     Texture cliff, water;
     
-    Tile centre_tile;
+    public Tile centre_tile;
     Tile clicked_tile;
     
     // CHUNKS TODO: Add multiple chunks
@@ -48,7 +48,7 @@ public class Island {
     }
     
     private void setup_tiles(){
-        chunk = new Chunk(33,33, 8);
+        chunk = new Chunk(33,33, 4);
         
         int current_row = 0;
         int rng_w = MathUtils.random(5,8);
@@ -72,16 +72,16 @@ public class Island {
         for(int row = 0; row < chunk.number_rows; row ++){
             for(int col = 0; col < chunk.number_cols; col ++){
                 // Create TILE
-                Tile tile = new Tile(col, row, chunk.tile_size, TILETYPE.WATER, random_water());
+                Tile tile = new Tile(col, row, chunk.tile_size, TileType.WATER, random_water());
                 
                 // Make a small island
                 if(row > min_row && row < max_row && col > min_col && col < max_col){
                     tile.texture = random_grass();
-                    tile.type = TILETYPE.GRASS;
+                    tile.type = TileType.GRASS;
                     
                     if(row == first_tile_row + 1){
                         tile.texture = cliff;
-                        tile.type = TILETYPE.CLIFF;
+                        tile.type = TileType.CLIFF;
                     } else {
                         // Chance to add trees etc
                     }

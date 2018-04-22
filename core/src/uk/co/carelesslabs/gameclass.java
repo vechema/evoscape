@@ -51,6 +51,8 @@ public class gameclass extends ApplicationAdapter {
         Gdx.input.setInputProcessor(control);
         
         island = new Island();
+        camera.position.x = island.centre_tile.pos.x;
+        camera.position.y = island.centre_tile.pos.y;
     }
 
     @Override
