@@ -92,5 +92,6 @@ public class gameclass extends ApplicationAdapter {
     public void dispose () {
         batch.dispose();
         img.dispose();
+        Media.dispose();
     }
 }
