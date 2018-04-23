@@ -15,7 +15,6 @@ public class gameclass extends ApplicationAdapter {
     OrthographicCamera camera;
     Control control;
     SpriteBatch batch;
-    Texture img;
 
     // Display Size
     private int displayW;
@@ -31,7 +30,6 @@ public class gameclass extends ApplicationAdapter {
     public void create () {
         Media.load_assets();
         batch = new SpriteBatch();
-        img = new Texture("badlogic.jpg");
         
         // CAMERA
         displayW = Gdx.graphics.getWidth();
@@ -61,8 +59,8 @@ public class gameclass extends ApplicationAdapter {
         
         // GAME LOGIC
         hero.update(control);
-        
-        camera.position.lerp(hero.pos3, .1f);
+
+        camera.position.lerp(hero.pos3.add(hero.width/2,hero.height/2,0), 0.2f);
         camera.update();
         
         // GAME DRAW
@@ -84,6 +82,5 @@ public class gameclass extends ApplicationAdapter {
     @Override
     public void dispose () {
         batch.dispose();
-        img.dispose();
     }
 }
