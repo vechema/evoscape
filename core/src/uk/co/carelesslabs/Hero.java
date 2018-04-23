@@ -7,8 +7,8 @@ public class Hero extends Entity{
     
     public Hero(Vector3 pos){
         type = EntityType.HERO;
-        width = 8;
-        height = 8;
+        width = 16;
+        height = 16;
         this.pos.x = pos.x;
         this.pos.y = pos.y;
         texture = Media.hero;

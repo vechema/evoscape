@@ -8,6 +8,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector3;
 
 public class gameclass extends ApplicationAdapter {
     OrthographicCamera camera;
@@ -57,8 +58,11 @@ public class gameclass extends ApplicationAdapter {
         
         // GAME LOGIC
         hero.update(control);
-        
-        camera.position.lerp(hero.pos, .1f);
+
+        Vector3 cameraPos = new Vector3();
+        cameraPos.x = hero.pos.x + hero.width/2;
+        cameraPos.y = hero.pos.y + hero.height/2;
+        camera.position.lerp(cameraPos, .1f);
         camera.update();
         
         // GAME DRAW
