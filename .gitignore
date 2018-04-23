@@ -22,3 +22,9 @@
 hs_err_pid*
 .DS_Store
 desktop/bin/*
+
+# Android Studio files
+.idea/
+*/build/*
+local.properties
+.gradle/
