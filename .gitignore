@@ -28,3 +28,6 @@ desktop/bin/*
 */build/*
 local.properties
 .gradle/
+
+# Doc files
+core/doc/*
