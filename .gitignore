@@ -31,3 +31,6 @@ local.properties
 
 # Doc files
 core/doc/*
+
+# Save files
+core/assets/data/save/entities.json

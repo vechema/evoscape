@@ -82,7 +82,7 @@ public class Island {
         // CHUNK ROWS AND COLUMNS
         for(int chunkRow = 0; chunkRow < chunkSize; chunkRow ++){
             for(int chunkCol = 0; chunkCol < chunkSize; chunkCol ++){
-                chunk = new Chunk(32, 32, 8);
+                chunk = new Chunk(chunkWidth, chunkWidth, chunkTileSize);
                 tileArray = new ArrayList<Tile>();
                 chunk.chunkNumber =  (chunkRow * chunkSize) + chunkCol;
                 chunk.col = chunkCol;
