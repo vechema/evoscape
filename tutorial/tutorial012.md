@@ -34,6 +34,7 @@
 
 # ObjectManager - NEW class
 * variables to hold entities and chunks of gameclass
+  * Now use multiple chunks
 * clearAll - clear method for entities and chunks
 
 # Chunk
@@ -46,9 +47,10 @@
 * Move lots of map generation to MapGenerator class
   * updateImage method
 * In setupTiles method, embed tile loops in chunk loops
-  * Not sure why the added loops
-  * Not sure why using chunkNumber 4
-* codeTiles also adds for loop chunks, also not sure why
+  * Instead of a single chunk of 32x32 tiles, the world is 3x3 chunk of 32x32 tiles. So the world is 96x96
+  * Chunk 4 is the middle chunk of the 3x3, so only that one gets land
+  * All chunks other than 4 (the middle) get just water
+* codeTiles also adds for loop chunks
 * add accesser to chunk at Vector2 pos
 
 # MapGenerator
